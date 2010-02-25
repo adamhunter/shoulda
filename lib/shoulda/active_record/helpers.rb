@@ -18,6 +18,7 @@ module Shoulda # :nodoc:
       def default_error_message(key, values = {})
         if Object.const_defined?(:ActiveModel)
           I18n.translate("errors.messages.#{key}", values)
+          # remove below?
         elsif Object.const_defined?(:I18n) # Rails >= 2.2
           I18n.translate("activerecord.errors.messages.#{key}", values)
         else # Rails <= 2.1.x
