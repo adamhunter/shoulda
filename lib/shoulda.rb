@@ -1,5 +1,5 @@
 module Shoulda
-  VERSION = "2.10.3"
+  VERSION = "3.0.pre"
 end
 
 if defined? Spec

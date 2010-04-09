@@ -16,7 +16,7 @@ module Shoulda # :nodoc:
       #   default_error_message(:too_short, :count => 5)
       #   default_error_message(:too_long, :count => 60)
       def default_error_message(key, values = {})
-        if Object.const_defined?(:ActiveModel)
+        if Object.const_defined?(:ActiveModel) # Rails >= 3
           translation = I18n.translate("errors.messages.#{key}", values)
           if translation =~ /translation missing/
             # change to use any orm
